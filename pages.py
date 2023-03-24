@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 from base import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -7,7 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains as AC
 
 
 class YandexMainPage(BasePage):
-
+    URL = "https://ya.ru/"
     SEARCH_FIELD = (By.XPATH, "//input[@id='text']")
     SEARCH_BUTTON = (By.XPATH, "//button[@type='submit']")
     SUGGEST_FIELD = (By.CLASS_NAME, "mini-suggest__popup")
@@ -15,7 +13,7 @@ class YandexMainPage(BasePage):
     IMAGES_BUTTON = (By.CSS_SELECTOR, "a[aria-label='Картинки']")
 
     def get(self):
-        self.driver.get("https://ya.ru/")
+        self.driver.get(self.URL)
 
     def click(self, locator):
         super().click(locator)
@@ -40,7 +38,7 @@ class SearchResultsPage(BasePage):
 
 
 class YandexImagesPage(BasePage):
-
+    URL = "https://yandex.ru/images/"
     CATEGORY = (By.CLASS_NAME, "Link")
     CATEGORY_INPUT = (By.XPATH, "//input[@name='text']")
     NEXT_IMAGE_BUTTON = (By.CLASS_NAME, "CircleButton_type_next")

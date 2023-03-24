@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import pytest
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
